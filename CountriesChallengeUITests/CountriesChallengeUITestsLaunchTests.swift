@@ -45,4 +45,16 @@ class CountriesChallengeUITestsLaunchTests: BaseUITest {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
+    
+    func testSearchCountry() throws {
+        
+        let searchField = app.searchFields["Search"]
+        XCTAssertTrue(searchField.waitForExistence(timeout: 5), "Search field not found")
+
+        searchField.tap()
+        searchField.typeText("USA")
+
+        let indiaCell = app.tables.staticTexts["USA"]
+        XCTAssertTrue(indiaCell.waitForExistence(timeout: 5), "'USA' should appear in filtered results")
+    }
 }
