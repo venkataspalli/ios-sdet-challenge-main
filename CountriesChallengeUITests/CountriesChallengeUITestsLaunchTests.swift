@@ -54,7 +54,7 @@ class CountriesChallengeUITestsLaunchTests: BaseUITest {
         searchField.tap()
         searchField.typeText("USA")
 
-        let indiaCell = app.tables.staticTexts["USA"]
-        XCTAssertTrue(indiaCell.waitForExistence(timeout: 5), "'USA' should appear in filtered results")
+        let usaCell = app.tables.staticTexts["USA"]
+        XCTAssertTrue(usaCell.waitForExistence(timeout: 5), "'USA' should appear in filtered results")
     }
 }
